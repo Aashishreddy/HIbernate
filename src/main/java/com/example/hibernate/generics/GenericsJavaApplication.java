@@ -9,5 +9,12 @@ public class GenericsJavaApplication {
 
         GenericPrinter<String> printString = new GenericPrinter<>("Hello");
         printString.print();
+
+        printing("X");
+        printing(50);
+    }
+
+    public static <T> void printing(T printEverything) {
+        System.out.println(printEverything);
     }
 }
