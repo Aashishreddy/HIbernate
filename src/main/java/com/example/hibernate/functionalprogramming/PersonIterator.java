@@ -1,6 +1,7 @@
 package com.example.hibernate.functionalprogramming;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,11 +13,7 @@ public class PersonIterator {
         Person p3 = Person.builder().name("David").gender("MALE").build();
         Person p4 = Person.builder().name("Jack").gender("FEMALE").build();
 
-        ArrayList<Person> peopleList = new ArrayList<>();
-        peopleList.add(p1);
-        peopleList.add(p2);
-        peopleList.add(p3);
-        peopleList.add(p4);
+        ArrayList<Person> peopleList = new ArrayList<>(Arrays.asList(p1, p2, p3, p4));
 
         //To retrieve females
         //APPROACH 1
