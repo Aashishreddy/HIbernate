@@ -3,6 +3,7 @@ package com.example.hibernate.functionalprogramming;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class PersonIterator {
@@ -30,5 +31,19 @@ public class PersonIterator {
                                             .filter(person -> person.getGender().equals("FEMALE"))
                                             .collect(Collectors.toList());
         females.forEach(System.out::println);
+
+        //multiply each element by 2 using streams
+        Integer[] integers = {1, 2, 3, 4, 5};
+        List<Integer> integerList = new ArrayList<>(Arrays.asList(integers));
+        List<Integer> multipliedList = integerList.stream().map(integer -> integer * 2).collect(Collectors.toList());
+        multipliedList.forEach(System.out::println);
+        System.out.println(multipliedList);
+
+        //define a function outside
+        Function<Integer, Integer> timesFour = (x) -> x * 4;
+        List<Integer> timesFourList = integerList.stream()
+                                            .map(timesFour)
+                                            .collect(Collectors.toList());
+        System.out.println(timesFourList);
     }
 }
